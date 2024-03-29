@@ -21,7 +21,6 @@ def save_cards():
 # ----------------------- Button Functionality -------------- #
 def right_pressed():
     french_to_english.remove(current_card)
-    print(f"Length After Decision: {len(french_to_english)}")
     save_cards()
     next_card()
 
@@ -34,7 +33,6 @@ def flip_card():
 def next_card():
     global current_card, flip_timer
     window.after_cancel(flip_timer)
-    print(f"Current Length before Decision: {len(french_to_english)}")
     current_card = random.choice(french_to_english)
     canvas.itemconfig(card_image, image=card_front)
     canvas.itemconfig(language_text, text="French", fill="black")
